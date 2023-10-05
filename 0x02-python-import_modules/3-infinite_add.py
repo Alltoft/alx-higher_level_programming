@@ -7,7 +7,4 @@ if __name__ == "__main__":
     while i < n:
         a += int(argv[i])
         i += 1
-    if n == 0:
-        print(0)
-    else:
-        print(a)
+    print(a)
