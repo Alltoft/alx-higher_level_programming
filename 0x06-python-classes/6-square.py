@@ -1,56 +1,65 @@
 #!/usr/bin/python3
-'''a class Square that defines a square by size and area
-with property'''
+'''calc square'''
 
 
 class Square:
-    '''defining sizes and area with handleing
-    the errors with property'''
+    """A class that represents a square"""
+
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.__position = position
+        """Initialize the square with a given size and position"""
+
+        self.size = size
+
+        self.position = position
 
     @property
     def size(self):
+        """Return the size attribute"""
+
         return self.__size
 
     @size.setter
     def size(self, value):
-        if isinstance(value, int) is False:
+        """Set the size attribute"""
+
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
+
         if value < 0:
             raise ValueError("size must be >= 0")
+
         self.__size = value
 
     @property
     def position(self):
+        """Return the position attribute"""
+
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Set the position attribute"""
+
         if not isinstance(value, tuple) or len(value) != 2 or \
                 not all(isinstance(i, int) and i >= 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
 
-        self.__position[0] = value[0]
-        self.__position[1] = value[1]
+        self.__position = value
 
     def area(self):
-        self.Sarea = self.__size * self.__size
-        return self.Sarea
+        """Return the current square area"""
+
+        return self.__size ** 2
 
     def my_print(self):
+        """Print the square with '#' characters and position"""
+
         if self.__size == 0:
             print()
             return
-        for nl in range(self.__position[1]):
+
+        for i in range(self.__position[1]):
             print()
+
         for i in range(self.__size):
-            for sp in range(self.__position[0]):
-                print(" ", end="")
-            for a in range(self.__size):
-                if self.__size != 0:
-                    print("#", end="")
-                else:
-                    print()
-            print()
+            print(' ' * self.__position[0] + '#' * self.__size)
