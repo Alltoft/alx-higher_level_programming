@@ -6,7 +6,7 @@ with property'''
 class Square:
     '''defining sizes and area with handleing the errors
     with property'''
-    def __init__(self, size):
+    def __init__(self, size=0):
         self.__size = size
 
     @property
