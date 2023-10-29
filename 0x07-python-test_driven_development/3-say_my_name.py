@@ -1,5 +1,12 @@
 #!/usr/bin/python3
+"""a function that prints My name is <first name> <last name>.
+first_name and last_name must be strings otherwise, raise a TypeError
+"""
+
+
 def say_my_name(first_name, last_name=""):
+    """this will print My name is <first name> <last name>.
+    handling the raised errors"""
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     elif not isinstance(last_name, str):
