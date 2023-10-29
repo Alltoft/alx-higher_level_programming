@@ -1,8 +1,4 @@
 #!/usr/bin/python3
-matrix_divided = __import__('2-matrix_divided').matrix_divided
+text_indentation = __import__('5-text_indentation').text_indentation
 
-
-matrix = [4, 5, 6
-]
-print(matrix_divided(matrix, 3))
-print(matrix)
+text_indentation(5)
