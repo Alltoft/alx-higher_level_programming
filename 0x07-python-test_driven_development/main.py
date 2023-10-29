@@ -1,4 +1,10 @@
 #!/usr/bin/python3
-text_indentation = __import__('5-text_indentation').text_indentation
+matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-text_indentation(5)
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+print(matrix_divided([[1, 0, 3], [4, 5, 6]], 3.5))
+print(matrix)
+
