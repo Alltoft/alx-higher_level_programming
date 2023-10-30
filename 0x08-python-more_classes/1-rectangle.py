@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""empty class"""
+"""a class Rectangle that defines a rectangle by:
+Private instance attribute: width
+Private instance attribute: height"""
 
 
 class Rectangle:
-    """empty class"""
+    """Instantiation with optional width and height:
+    def __init__(self, width=0, height=0):"""
 
     def __init__(self, width=0, height=0):
         self.width = width
