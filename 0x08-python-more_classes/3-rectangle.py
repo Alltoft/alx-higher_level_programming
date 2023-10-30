@@ -2,14 +2,16 @@
 """a class Rectangle that defines a rectangle by:
 Private instance attribute: width
 Private instance attribute: height
-counting the perimiter and the area"""
+counting the perimiter and the area
+prints the rectangle with the character #"""
 
 
 class Rectangle:
     """Instantiation with optional width and height:
     def __init__(self, width=0, height=0)
     returns the rectangle area
-    returns the rectangle perimeter"""
+    returns the rectangle perimeter
+    printing the rectangle with the character #"""
 
     def __init__(self, width=0, height=0):
         self.width = width
