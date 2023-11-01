@@ -28,3 +28,5 @@ TypeError: b must be an integer
 3
 >>> add_integer(999999998, 999999999)
 1999999997
+>>> add_integer(34263478, -89234582395)
+-89200318917
