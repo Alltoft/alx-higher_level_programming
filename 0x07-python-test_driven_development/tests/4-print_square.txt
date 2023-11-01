@@ -21,6 +21,6 @@ Traceback (most recent call last):
 TypeError: size must be an integer
 >>> print_square(0)
 
->>> print_square(None)
+>>> print_square(float('nan'))
 Traceback (most recent call last):
 TypeError: size must be an integer
