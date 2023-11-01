@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-"""Unittest for max_integer([..])
-"""
+"""max integer"""
+
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+class MyTestCase(unittest.TestCase):
+    def test_no_arg(self):
+        self.assertEqual(max_integer(), None)
 
-class TestMaxInteger(unittest.TestCase):
-    def test_max_integer(self):
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
-        self.assertEqual(max_integer([]), None)
-        self.assertEqual(max_integer([1, 3, 9.4, 2]), 9.4)
-        self.assertEqual(max_integer([1, 3, -94, 2]), 3)
-        self.assertEqual(max_integer([9.4]), 9.4)
-        self.assertEqual(max_integer([1]), 1)
-        matrix = ['m','r','k']
-        self.assertEqual(max_integer(matrix),'r')
+    def test_max(self):
+        self.assertEqual(max_integer([8, 3, 9, 7]), 9)
+        self.assertEqual(max_integer([56]), 56)
+        self.assertEqual(max_integer([5, -8, 10]), 10)
+        self.assertEqual(max_integer([5.67, 5.66, 5.65]), 5.67)
+        self.assertEqual(max_integer([2, 5, 9, 87, 215, 8, 32]), 215)
+        self.assertEqual(max_integer([584579621, 584579622]),  584579622)
+        self.assertEqual(max_integer([10, -8, 10, 5, 3]), 10)
+        self.assertEqual(max_integer([-10, -8, -5, -3]), -3)
 
-    def test_values(self):
-        self.assertRaises(TypeError, max_integer(), [1, 3, "hamid", 2])
+
+    def test_value(self):
+        self.assertRaises(TypeError, max_integer(), [5, "hi", 0])
