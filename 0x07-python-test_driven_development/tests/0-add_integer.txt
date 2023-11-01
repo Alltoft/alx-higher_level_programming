@@ -23,3 +23,6 @@ TypeError: b must be an integer
 >>> add_integer(0, float('nan'))
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
+>>> add_integer("foo", 0)
+Traceback (most recent call last):
+TypeError: a must be an integer
