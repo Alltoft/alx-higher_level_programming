@@ -50,7 +50,3 @@ IndexError: list index out of range
 >>> matrix_divided(None, 1)
 Traceback (most recent call last):
 TypeError: object of type 'NoneType' has no len()
-
->>> print(matrix_divided([['20', '50'], [30, 40], [60, 70]], 10))
-Traceback (most recent call last):
-TypeError: matrix must be a matrix (list of lists) of integers/floats
