@@ -43,6 +43,6 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 IndexError: list index out of range
 
->>> matrix_divided()
+>>> matrix_divided([[2]], "foo")
 Traceback (most recent call last):
-TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+IndexError: list index out of range
