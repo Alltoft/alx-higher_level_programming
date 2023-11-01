@@ -1,23 +1,30 @@
 #!/usr/bin/python3
-"""a function that prints a text with
-2 new lines after each of these characters: ., ? and :
-text must be a string, otherwise raise a TypeError
-There should be no space at the beginning or at the end of
- each printed line"""
+"""
+5-text_indentation.py
+def text_indentation(text)
+tests/5-text_indentation.txt
+"""
 
 
 def text_indentation(text):
-    """def text_indentation(text): prints a text with
-    2 new lines after each of these characters: ., ? and :
-    text must be a string
-    There should be no space at the beginning or
-    at the end of each printed line"""
-    if not isinstance(text, str):
+    """
+    Prints text with two newlines separating each line
+    """
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    for i in range(len(text)):
-        if text[i] in [".", "?", ":"]:
+    text = text.strip(" ")
+    sep = [".", "?", ":"]
+    i = 0
+    while i < len(text):
+        if text[i] in sep:
             print("{}\n".format(text[i]))
-        elif text[i] == " " and text[i - 1] in [".", "?", ":"]:
+            i += 1
+            if i == len(text):
+                return
+            while text[i] is " " and i < len(text):
+                i += 1
             continue
-        else:
-            print("{}".format(text[i]), end="")
+        print("{}".format(text[i]), end='')
+        i += 1
+        if i == len(text) and text[i - 1] in sep:
+            print("\n")
