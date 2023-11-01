@@ -30,3 +30,5 @@ TypeError: b must be an integer
 1999999997
 >>> add_integer(34263478, -89234582395)
 -89200318917
+>>> add_integer(-13947692, 57234)
+-13890458
