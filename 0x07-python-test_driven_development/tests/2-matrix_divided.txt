@@ -41,3 +41,7 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('nan'))
 [[nan, nan, nan], [nan, nan, nan]]
+
+>>> matrix_divided(none, 1)
+Traceback (most recent call last):
+NameError: name 'none' is not defined
