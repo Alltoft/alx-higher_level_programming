@@ -32,3 +32,7 @@ TypeError: b must be an integer
 -89200318917
 >>> add_integer(-13947692, 57234)
 -13890458
+>>> add_integer(float('inf'), float('-inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
