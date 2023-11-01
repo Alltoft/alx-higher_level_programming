@@ -39,10 +39,10 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> matrix_divided([[2, 4, 8], [1, 2, 3]], float('inf'))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
->>> matrix_divided(none, 1)
-Traceback (most recent call last):
-NameError: name 'none' is not defined
-
 >>> matrix_divided([[]], 10)
 Traceback (most recent call last):
 IndexError: list index out of range
+
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
