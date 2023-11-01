@@ -20,4 +20,7 @@ TypeError: print_square() takes 1 positional argument but 2 were given
 Traceback (most recent call last):
 TypeError: size must be an integer
 >>> print_square(0)
-...
+
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
