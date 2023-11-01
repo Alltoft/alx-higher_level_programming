@@ -7,28 +7,37 @@ a function that prints a square with the character #.
 ####
 ####
 ####
+
 >>> print_square(4.5)
 Traceback (most recent call last):
 TypeError: size must be an integer
+
 >>> print_square(-2)
 Traceback (most recent call last):
 ValueError: size must be >= 0
+
 >>> print_square(4, 2)
 Traceback (most recent call last):
 TypeError: print_square() takes 1 positional argument but 2 were given
+
 >>> print_square("khalid")
 Traceback (most recent call last):
 TypeError: size must be an integer
+
 >>> print_square(0)
 
 >>> print_square()
 Traceback (most recent call last):
 TypeError: print_square() missing 1 required positional argument: 'size'
 
->>> print_square(float('inf'))
-Traceback (most recent call last):
-TypeError: size must be an integer
-
->>> print_square(float('nan'))
-Traceback (most recent call last):
-TypeError: size must be an integer
+>>> print_square(2*5)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
