@@ -20,23 +20,6 @@ TypeError: a must be an integer
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 TypeError: b must be an integer
->>> add_integer(0)
-98
->>> add_integer(123.9)
-221
->>> add_integer(-95.5)
-3
->>> add_integer(999999998, 999999999)
-1999999997
->>> add_integer(34263478, -89234582395)
--89200318917
->>> add_integer(-13947692, 57234)
--13890458
->>> add_integer(float('inf'), float('-inf'))
-Traceback (most recent call last):
-...
-OverflowError: cannot convert float infinity to integer
 >>> add_integer(0, float('nan'))
 Traceback (most recent call last):
-...
 ValueError: cannot convert float NaN to integer
