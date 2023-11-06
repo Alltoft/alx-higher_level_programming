@@ -46,7 +46,7 @@ Testing too many arguments for area() method:
     >>> bg.area(2, 5)
     Traceback (most recent call last):
     ...
-    TypeError: area() takes 1 positional argument but 3 were given
+    TypeError: BaseGeometry.area() takes 1 positional argument but 3 were given
 
 
 
@@ -96,11 +96,11 @@ If no arguments are passed, a TypeError is raised.
     >>> bg.integer_validator()
     Traceback (most recent call last):
     ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 
 If only one argument is passed, a TypeError is raised.
     >>> bg.integer_validator("one")
     Traceback (most recent call last):
     ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
