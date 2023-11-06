@@ -16,9 +16,6 @@ size must be private. No getter or setter
 size must be a positive integer, validated by integer_validator
 the area() method must be implemented"""
     def __init__(self, size):
-        super().__init__(size, size)
         self.__size = size
         self.integer_validator("size", self.__size)
-
-    def area(self):
-        return self.__size * self.__size
+        super().__init__(size, size)
