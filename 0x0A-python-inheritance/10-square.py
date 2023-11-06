@@ -21,4 +21,4 @@ the area() method must be implemented"""
         self.integer_validator("size", self.__size)
 
     def area(self):
-        return self.__size ** 2
+        return self.__size * self.__size
