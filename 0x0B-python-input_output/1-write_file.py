@@ -14,6 +14,6 @@ not allowed to import any module"""
     with open(filename, "a", encoding="utf-8") as f:
         i = 0
         for char in text:
-            f.append(char)
+            f.write(char)
             i += 1
-        return(i)
+        return (i)
