@@ -8,4 +8,4 @@ must use the with statement
 dont need to manage file permission or file doesn't exist exceptions.
 are not allowed to import any module"""
     with open(filename, encoding="utf-8") as f:
-        print(f.read())
+        print(f.read(), end="")
