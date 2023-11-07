@@ -9,5 +9,5 @@ def save_to_json_file(my_obj, filename):
 dont need to manage exceptions if the object cant be serialized.
 dont need to manage file permission exceptions."""
 
-    with open(filename, "a") as f:
+    with open(filename, "w") as f:
         return (json.dump(my_obj, f))
