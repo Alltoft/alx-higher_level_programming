@@ -5,12 +5,9 @@ import sys
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
-my_list = []
 prev_list = []
 my_str = ""
 
-for arg in sys.argv[1:]:
-    my_list.append(arg)
 
 try:
     prev_list = load_from_json_file("add_item.json")
@@ -18,4 +15,4 @@ try:
         prev_list.append(arg)
     save_to_json_file(prev_list, "add_item.json")
 except FileNotFoundError:
-    save_to_json_file(my_list, "add_item.json")
+    save_to_json_file(prev_list, "add_item.json")
