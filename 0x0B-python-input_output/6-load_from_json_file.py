@@ -10,5 +10,5 @@ You dont need to manage exceptions if the JSON string doesnt
 represent an object.
 You dont need to manage file permissions / exceptions."""
 
-    with open(filename, "a") as f:
+    with open(filename, "w") as f:
         return (json.load(f))
