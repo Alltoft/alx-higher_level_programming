@@ -7,7 +7,6 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
 my_list = []
 prev_list = []
-my_str = ""
 
 for arg in sys.argv[1:]:
     my_list.append(arg)
