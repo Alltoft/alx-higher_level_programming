@@ -92,3 +92,11 @@ class Rectangle (Base):
         new_str = f"[Rectangle] ({self.id}) {self.__x}/{self.__y} \
 - {self.__width}/{self.__height}"
         return new_str
+
+    def update(self, *args, **kwargs):
+        attrs = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            if arg is not None:
+                setattr(self, attrs[i], arg)
+        for key, value in kwargs.items():
+            setattr(self, key, value)
