@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 import json
 
+
 class Base:
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id:
             self.id = id
@@ -35,7 +37,7 @@ class Base:
         dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @classmethod
     def load_from_file(cls):
         try:

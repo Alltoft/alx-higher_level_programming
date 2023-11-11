@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
+
+
 class Square(Rectangle):
+
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
@@ -22,10 +25,11 @@ class Square(Rectangle):
                 setattr(self, attrs[i], arg)
         for key, value in kwargs.items():
             setattr(self, key, value)
+
     def to_dictionary(self):
         return {
-            'id' : self.id,
-            'x' : self.x,
-            'size' : self.size,
-            'y' : self.y
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y
             }

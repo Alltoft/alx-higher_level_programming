@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from models.base import Base
 
+
 class Rectangle (Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -79,7 +80,7 @@ class Rectangle (Base):
         return self.__height * self.width
 
     def display(self):
-        for l in range(self.__y):
+        for p in range(self.__y):
             print()
         for i in range(self.__height):
             for s in range(self.__x):
@@ -102,10 +103,5 @@ class Rectangle (Base):
             setattr(self, key, value)
 
     def to_dictionary(self):
-        return {
-            'x' : self.x,
-            'y' : self.y,
-            'id' : self.id,
-            'height' : self.height,
-            'width' : self.width
-                }
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
