@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import unittest
-from models.square import Square
+# from models.square import Square
 from models.rectangle import Rectangle
 from models.base import Base
 
