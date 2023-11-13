@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 import unittest
-# from models.square import Square
+from models.square import Square
 from models.rectangle import Rectangle
-# from models.base import Base
+from models.base import Base
 
 class TestRecatngle(unittest.TestCase):
     def test_id_rec(self):
