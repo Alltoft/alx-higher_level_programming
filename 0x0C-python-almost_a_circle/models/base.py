@@ -30,7 +30,7 @@ class Base:
         conv = []
         if not list_objs:
             for i in list_objs:
-                conv.append(cls.to_dictionary(i))
+                conv.append(i.to_dictionary())
         with open(cls.__name__ + ".json", "w") as f:
             f.write(cls.to_json_string(conv))
 
