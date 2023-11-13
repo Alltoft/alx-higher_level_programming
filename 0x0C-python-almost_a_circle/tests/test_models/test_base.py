@@ -2,6 +2,7 @@
 import unittest
 from models.base import Base
 
+
 class Testbase(unittest.TestCase):
     def test_id(self):
         b1 = Base()
@@ -12,7 +13,6 @@ class Testbase(unittest.TestCase):
         self.assertEqual(b2.id, 7)
         self.assertEqual(b3.id, 8)
         self.assertEqual(b4.id, 9)
-
 
     def test_given_id(self):
         b = Base(36)
@@ -27,14 +27,12 @@ class Testbase(unittest.TestCase):
         b = Base(-9)
         self.assertEqual(b.id, -9)
 
-
     def test_2args(self):
         with self.assertRaises(TypeError):
-             b = Base(6, 5)
+            b = Base(6, 5)
 
     def testfloat(self):
         self.assertEqual(Base(6.4).id, 6.4)
-
 
     def test0args(self):
         r1 = Base(None)
@@ -44,7 +42,7 @@ class Testbase(unittest.TestCase):
         r5 = Base()
         self.assertEqual(r1.id, r2.id - 1)
         self.assertEqual(r1.id, r5.id - 4)
-       
+
 
 if __name__ == '__main__':
     unittest.main()
