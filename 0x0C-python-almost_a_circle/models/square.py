@@ -4,28 +4,28 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-
-    """defining the attributes of the Class"""
+    """A class that represents a square"""
     def __init__(self, size, x=0, y=0, id=None):
+        """defining the attributes of the Class"""
         super().__init__(size, size, x, y, id)
 
-    """the size attribute getter"""
     @property
     def size(self):
+        """the size attribute getter"""
         return self.width
 
-    """the size attribute setter"""
     @size.setter
     def size(self, size):
+        """the size attribute setter"""
         self.width = size
 
-    """The overloading __str__ method should return
-    [Square] (<id>) <x>/<y> - <size>"""
     def __str__(self):
+        """The overloading __str__ method should return
+        [Square] (<id>) <x>/<y> - <size>"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
-    """a public method that assigns attributes"""
     def update(self, *args, **kwargs):
+        """a public method that assigns attributes"""
         attrs = ["id", "size", "x", "y"]
         for i, arg in enumerate(args):
             if arg is not None:
@@ -33,9 +33,9 @@ class Square(Rectangle):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-    """a public method that returns
-    the dictionary representation of a Square """
     def to_dictionary(self):
+        """a public method that returns
+        the dictionary representation of a Square """
         return {
             'id': self.id,
             'x': self.x,
