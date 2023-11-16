@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import io
-import sys
 from models.square import Square
 from models.rectangle import Rectangle
 from models.base import Base
@@ -68,9 +66,11 @@ class TestRecatngle(unittest.TestCase):
 
     def testdisplay(self):
         r1 = Rectangle(3, 4)
-        self.assertEqual()
         with self.assertRaises(TypeError):
             r1.display(2)
+
+    def testdisplaynoargs(self):
+        r2 = Rectangle(7, 8)
 
     def test_str(self):
         Base._Base__nb_objects = 0
