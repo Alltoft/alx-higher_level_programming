@@ -1,41 +1,85 @@
 #!/usr/bin/python3
-""" 100-main """
-from models.rectangle import Rectangle
-from models.square import Square
+""" Doc """
+import os, sys
+import subprocess
 
-if __name__ == "__main__":
 
-    r1 = Rectangle(10, 7, 2, 8)
-    r2 = Rectangle(2, 4)
-    list_rectangles_input = [r1, r2]
+def run_command(cmd):
+    process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, error = process.communicate()
+    return "{}{}".format(output, error)
 
-    Rectangle.save_to_file_csv(list_rectangles_input)
 
-    list_rectangles_output = Rectangle.load_from_file_csv()
+def run_unittest():
+    nb_tests = 0
+    is_success = False
+    try:
+        res = run_command("python3 -m unittest discover tests")
+        for line in res.split("\\n"):
+            if "Ran " in line:
+                nb_tests = int(res.split("Ran ")[-1].split(" tests")[0])
+            if nb_tests > 0 and "OK" in line:
+                is_success = True
+    except:
+        nb_tests = 0
+        is_success = False
+    return nb_tests, is_success
 
-    for rect in list_rectangles_input:
-        print("[{}] {}".format(id(rect), rect))
 
-    print("---")
+# validate tests are passing by default
+nb_tests, passing = run_unittest()
 
-    for rect in list_rectangles_output:
-        print("[{}] {}".format(id(rect), rect))
+if nb_tests <= 0:
+    print("No test found")
+    exit(1)
+if not passing:
+    print("Regular tests are not passing")
+    exit(1)
 
-    print("---")
-    print("---")
+file_path_to_update = "models/rectangle.py"
+file_path_updated = "models/tmp_rectangle.py"
+if not os.path.exists(file_path_to_update):
+    print("{} not found".format(file_path_to_update))
+    exit(1)
 
-    s1 = Square(5)
-    s2 = Square(7, 9, 1)
-    list_squares_input = [s1, s2]
+try:
+    # Move file
+    if os.path.exists(file_path_updated):
+        os.remove(file_path_updated)
+    os.rename(file_path_to_update, file_path_updated)
 
-    Square.save_to_file_csv(list_squares_input)
+    # update file
+    new_content = """#!/usr/bin/python3
+\"\"\" Random documentation \"\"\"
+from models.tmp_rectangle import Rectangle
 
-    list_squares_output = Square.load_from_file_csv()
 
-    for square in list_squares_input:
-        print("[{}] {}".format(id(square), square))
+class Rectangle(Rectangle):
+    \"\"\" Random documentation \"\"\"
 
-    print("---")
+    def display(self):
+        \"\"\" Random documentation \"\"\"
+        if self.x == 0 and self.y == 0:
+            self.x = 1
+        super().display()
+"""
 
-    for square in list_squares_output:
-        print("[{}] {}".format(id(square), square))
+    with open(file_path_to_update, "w") as file:
+        file.write(new_content)
+
+    # run tests
+    nb_tests, passing = run_unittest()
+    if nb_tests <= 0:
+        print("No test found")
+    if passing:
+        print("No test found for this case")
+except:
+    print("An error occured... {}".format(sys.exc_info()[0]))
+
+# rollback file
+if os.path.exists(file_path_updated):
+    if os.path.exists(file_path_to_update):
+        os.remove(file_path_to_update)
+    os.rename(file_path_updated, file_path_to_update)
+
+print("OK", end="")
