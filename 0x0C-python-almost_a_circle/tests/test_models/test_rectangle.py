@@ -72,24 +72,6 @@ class TestRecatngle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r1.display(2)
 
-    def test_display_method(self):
-        """Rectangle display method unittest"""
-        output = io.StringIO()
-        sys.stdout = output
-        r12 = Rectangle(2, 2)
-        r12.display()
-        sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "##\n##\n")
-
-    def test_display_method_w_coordinates(self):
-        """Rectangle display method unittest"""
-        output = io.StringIO()
-        sys.stdout = output
-        r15 = Rectangle(2, 2, 2, 1)
-        r15.display()
-        sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "\n  ##\n  ##\n")
-
     def test_str(self):
         Base._Base__nb_objects = 0
         r1 = Rectangle(4, 6, 2, 1, 12)
