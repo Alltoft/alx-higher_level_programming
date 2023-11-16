@@ -68,8 +68,6 @@ class TestRecatngle(unittest.TestCase):
         r1 = Rectangle(3, 4)
         with self.assertRaises(TypeError):
             r1.display(2)
-        with self.assertRaises(TypeError):
-            r1.display()
 
     def test_str(self):
         Base._Base__nb_objects = 0
