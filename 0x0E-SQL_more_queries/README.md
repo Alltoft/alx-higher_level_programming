@@ -13,4 +13,4 @@
 - What are JOIN and UNION
 
 ### more info:
-[https://intranet.alxswe.com/rltoken/RniBKj48bnIN8xpXhGl1yA].Click here
+[Click here] https://intranet.alxswe.com/rltoken/RniBKj48bnIN8xpXhGl1yA
