@@ -13,4 +13,4 @@
 - What are JOIN and UNION
 
 ### more info:
-click [here](https://intranet.alxswe.com/rltoken/RniBKj48bnIN8xpXhGl1yA)
+visit this web : [ I am the web click on me.. not too hard :)](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=intro.html)
