@@ -8,7 +8,7 @@ if (isNaN(Arguments[2])) {
   while (number < Arguments[2]) {
     loopNumber = 0;
     while (loopNumber < Arguments[2]) {
-      console.log('X\r');
+      process.stdout.write('X');
       loopNumber++;
     }
     console.log('');
