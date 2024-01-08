@@ -1,22 +1,17 @@
 #!/usr/bin/node
-const Arguments = process.argv;
-let bigNumber = 0, secbigNumber = 0, loopNumber = 2;
-if (Arguments[2] === undefined || Arguments.length === 3) {
-    console.log(0);
-} else  {
-    console.log('I am here');
-    while (parseInt(loopNumber) < Arguments.length)   {
-        console.log('I am here');
-        if (parseInt(secbigNumber) < Arguments[loopNumber])  {
-            if (parseInt(bigNumber) < Arguments[loopNumber])
-                bigNumber = Arguments[loopNumber];
-            else
-                secbigNumber = Arguments[loopNumber];
-        }
-        else {
-            continue;
-        }
-        loopNumber++;
+const Arguments = process.argv.map(Number);
+let bigNumber = 0; let secbigNumber = 0; let loopNumber = 2; const length = Arguments.length;
+if (Arguments[2] === undefined || Arguments.length < 4) {
+  console.log(0);
+} else {
+  while (loopNumber < length) {
+    if (secbigNumber < Arguments[loopNumber]) {
+      if (bigNumber < Arguments[loopNumber]) {
+        secbigNumber = bigNumber;
+        bigNumber = Arguments[loopNumber];
+      } else { secbigNumber = Arguments[loopNumber]; }
     }
+    loopNumber++;
+  }
+  console.log(secbigNumber);
 }
-console.log(secbigNumber);
