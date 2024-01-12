@@ -8,7 +8,6 @@ from sqlalchemy import (create_engine)
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format('alo', 'Emran', 'hbtn_0e_6_usa'))
-    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
