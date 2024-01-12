@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-"""Start link class to table in database"""
-
+"""
+Define a State class
+that inherits from sqlalchemy Base
+"""
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import (create_engine)
@@ -12,7 +14,9 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).order_by(State.id)
-    for r in result:
-        if r.id == 1:
-            print('{}: {}'.format(r.id, r.name))
+    result = session.query(State).order_by(State.id).first()
+
+    if result is None:
+        print("Nothing")
+    else:
+        print('{}: {}'.format(result.id, result.name))
