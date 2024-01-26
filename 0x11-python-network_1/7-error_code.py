@@ -8,5 +8,4 @@ import requests
 if __name__ == "__main__":
     url = sys.argv[1]
     resp = requests.get(url)
-    respons = resp.text
-    print(requests.exceptions(respons))
+    print(requests.exceptions(resp))
