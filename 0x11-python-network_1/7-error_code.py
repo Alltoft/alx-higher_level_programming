@@ -8,4 +8,5 @@ import requests
 if __name__ == "__main__":
     url = sys.argv[1]
     resp = requests.get(url)
-    print(resp.text)
+    respons = resp.text
+    print(respons.code)
