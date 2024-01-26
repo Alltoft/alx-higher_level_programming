@@ -3,11 +3,12 @@
 to the passed URL with the email as a parameter, and displays the body of
 the response (decoded in utf-8)"""
 import sys
+from urllib import parse
 from urllib import request
 if __name__ == "__main__":
     url = sys.argv[1]
-    email = sys.argv[2]
-
-    req = request.Request(url, email)
+    dict = {'email': sys.argv[2]}
+    data = parse.urlencode(dict).encode('utf-8')
+    req = request.Request(url, data)
     with request.urlopen(req) as resp:
-        print('Your email is: {}'.format(req))
+        print('Your email is: {}'.format(resp.content))
