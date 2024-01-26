@@ -15,5 +15,4 @@ if __name__ == "__main__":
     if resp == {}:
         print('No result')
     else:
-        json_string = resp.text
-        json_data = eval(json_string)
+        print('[{}] {}'.format(resp.get('id'), resp.get('name')))
