@@ -9,7 +9,6 @@ if __name__ == "__main__":
     try:
         url = sys.argv[1]
         resp = requests.get(url)
-        text = resp.text()
-        print(text)
+        print(resp.text)
     except Exception as error:
         print('Error code: {}'.format(error.code))
