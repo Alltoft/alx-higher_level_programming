@@ -13,4 +13,4 @@ if __name__ == "__main__":
             rd = resp.read()
             print(rd.decode('utf-8'))
     except Exception as error:
-        print('Error code: {}'.format(type(error)))
+        print('Error code: {}'.format(error.code))
