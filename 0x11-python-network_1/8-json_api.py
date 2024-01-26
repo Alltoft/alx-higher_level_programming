@@ -6,14 +6,13 @@ import requests
 
 
 if __name__ == "__main__":
-    if sys.argv[1] != None:
+    if len(sys.argv) > 1 :
         dict = {'q': sys.argv[1]}
     else:
-        q=""
-        dict = {'q': q}
+        dict = {'q': ''}
     data = requests.post('http://0.0.0.0:5000/search_user', data=dict)
     resp = data.json
-    if resp == None:
+    if resp == {}:
         print('No result')
     else:
-        print(resp)
+        print(requests.get.json(resp, indent=4))
