@@ -9,8 +9,6 @@ import requests
 if __name__ == "__main__":
     url = sys.argv[1]
     dict = {'email': sys.argv[2]}
-    data = requests.post(dict).encoding('utf-8')
-    req = requests.request(url, data)
-    resp = requests.get(req)
-    rd = resp.text
-    print(rd)
+    data = requests.post(url, data=dict)
+    resp = data.text
+    print(resp)
