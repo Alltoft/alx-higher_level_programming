@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         dict = {'q': ''}
     data = requests.post('http://0.0.0.0:5000/search_user', data=dict)
-    resp = data.json
+    resp = data.json()
     if resp == {}:
         print('No result')
     else:
