@@ -15,4 +15,4 @@ if __name__ == "__main__":
     if resp == {}:
         print('No result')
     else:
-        print(requests.get.json(resp, indent=4))
+        json_data = eval(resp)
