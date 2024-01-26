@@ -7,13 +7,12 @@ import requests
 
 
 if __name__ == "__main__":
-    url = sys.argv[1]
-    if sys.argv[2] != None:
-        dict = {'q': sys.argv[2]}
+    if sys.argv[1] != None:
+        dict = {'q': sys.argv[1]}
     else:
         q=""
         dict = {'q': q}
-    data = requests.post(url, data=dict)
+    data = requests.post('http://0.0.0.0:5000/search_user', data=dict)
     resp = data.json
     if resp == None:
         print('No result')
