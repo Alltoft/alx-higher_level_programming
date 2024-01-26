@@ -6,9 +6,6 @@ import requests
 
 
 if __name__ == "__main__":
-    try:
-        url = sys.argv[1]
-        resp = requests.get(url)
-        print(resp.text)
-    except Exception as error:
-        print('Error code: {}'.format(error.code))
+    url = sys.argv[1]
+    resp = requests.get(url)
+    print(resp.text)
