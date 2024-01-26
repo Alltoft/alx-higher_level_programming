@@ -11,4 +11,5 @@ if __name__ == "__main__":
     data = parse.urlencode(dict).encode('utf-8')
     req = request.Request(url, data)
     with request.urlopen(req) as resp:
-        print('Your email is: {}'.format(resp.content))
+        rd = resp.read()
+        print(rd.decode('utf-8'))
