@@ -8,24 +8,23 @@ request(url, function (error, response, body) {
   } else {
     data = JSON.parse(body);
     const result = {};
-    data.forEach(function (IdNum){
-        IdNum.userId
-        id++;
+    data.forEach(function (IdNum) {
+      id++;
     });
-    while (temp <= id){
-        data.forEach(function (TaskComp) {
+    while (temp <= id) {
+      data.forEach(function (TaskComp) {
         if (TaskComp.userId === temp) {
-            if (TaskComp.completed === true) {
-                if (result[temp]) {
-                    result[temp] += 1;
-                } else {
-                    result[temp] = 1;
-                }
+          if (TaskComp.completed === true) {
+            if (result[temp]) {
+              result[temp] += 1;
+            } else {
+              result[temp] = 1;
             }
+          }
         }
-        });
-        temp++;
+      });
+      temp++;
     }
     console.log(result);
-}
+  }
 });
