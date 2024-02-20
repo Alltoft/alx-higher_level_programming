@@ -20,4 +20,4 @@ while (temp < IDs) {
 }
 setTimeout(() => {
   console.log(EpNum);
-}, 2000);
+}, 5000);
