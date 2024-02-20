@@ -1,23 +1,21 @@
 #!/usr/bin/node
 const request = require('request');
-const Arguments = process.argv;
-const IDs = 8; let temp = 1; let EpNum = 0;
-while (temp < IDs) {
-  request(Arguments[2] + '/' + temp, (error, response, body) => {
-    if (error) {
-      console.error(error);
-    } else {
-      const toJson = JSON.parse(body);
-      const charactr = toJson.characters;
-      for (const url of charactr) {
-        if (url.endsWith('18/')) {
-          EpNum++;
+const url = process.argv[2];
+let data;
+let movies = 0;
+request(url, function (error, response, body) {
+  if (error) {
+    console.error(error);
+  } else {
+    data = JSON.parse(body);
+    data.results.forEach(function (result) {
+      result.characters.forEach(function (character) {
+        const split = character.split('/');
+        if (split[split.length - 2] === '18') {
+          movies++;
         }
-      }
-    }
-  });
-  temp++;
-}
-setTimeout(() => {
-  console.log(EpNum);
-}, 10000);
+      });
+    });
+    console.log(movies);
+  }
+});
