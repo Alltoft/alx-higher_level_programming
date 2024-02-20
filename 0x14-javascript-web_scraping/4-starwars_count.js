@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const Arguments = process.argv;
-const IDs = 8; let temp = 1; let EpNum = 0; let vari = 0;
+const IDs = 8; let temp = 1; let EpNum = 0;
 while (temp < IDs) {
   request(Arguments[2] + '/' + temp, (error, response, body) => {
     if (error) {
@@ -11,14 +11,13 @@ while (temp < IDs) {
       const charactr = toJson.characters;
       for (const url of charactr) {
         if (url.endsWith('18/')) {
-          vari++;
+          EpNum++;
         }
-        EpNum = vari;
       }
     }
   });
   temp++;
 }
 setTimeout(() => {
-  console.log(vari);
+  console.log(EpNum);
 }, 2000);
